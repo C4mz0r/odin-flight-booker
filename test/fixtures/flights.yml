@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  source_id: 1
+  desintation_id: 1
+  date: 2016-07-12 20:29:10
+  duration: 1.5
+
+two:
+  source_id: 1
+  desintation_id: 1
+  date: 2016-07-12 20:29:10
+  duration: 1.5
