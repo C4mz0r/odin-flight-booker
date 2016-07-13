@@ -1,1 +1,8 @@
 <h1>Flights index page</h1>
+
+<%= form_tag 'root', method: :get do %>
+
+  <%= select_tag(:airport_id, options_for_select(@fromAirports))%>
+  <%= select_tag(:airport_id, options_for_select(@toAirports))%>
+  
+<% end %>
