@@ -1,8 +1,10 @@
 <h1>Flights index page</h1>
 
-<%= form_tag 'root', method: :get do %>
+<%= form_tag '/flights', method: :get do %>
 
-  <%= select_tag(:airport_id, options_for_select(@fromAirports))%>
-  <%= select_tag(:airport_id, options_for_select(@toAirports))%>
-  
+  <%= select_tag(:from_code, options_for_select(@fromAirports)) %>
+  <%= select_tag(:to_code, options_for_select(@toAirports)) %>
+  <%= select_tag(:date, options_for_select(@flightDates)) %>
+  <%= select_tag(:num_tickets, options_for_select([1, 2, 3, 4])) %>
+  <%= submit_tag("Search Flights")%>
 <% end %>
