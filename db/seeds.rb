@@ -11,5 +11,13 @@ Airport.create(name: 'LAX')
 Airport.create(name: 'MSP')
 
 Flight.create(source_id: 1, destination_id: 2, date: DateTime.now, duration: 1.5)
+Flight.create(source_id: 1, destination_id: 2, date: DateTime.now, duration: 1.5)
+Flight.create(source_id: 1, destination_id: 2, date: DateTime.now+1, duration: 1.5)
+Flight.create(source_id: 1, destination_id: 2, date: DateTime.now+1, duration: 1.5)
 Flight.create(source_id: 1, destination_id: 3, date: DateTime.now, duration: 2.5)
+Flight.create(source_id: 2, destination_id: 3, date: DateTime.now, duration: 3.25)
+Flight.create(source_id: 2, destination_id: 1, date: DateTime.now, duration: 1.75)
+Flight.create(source_id: 3, destination_id: 1, date: DateTime.now, duration: 2.75)
+Flight.create(source_id: 3, destination_id: 2, date: DateTime.now, duration: 3.5)
+
 
