@@ -1,8 +1,8 @@
 <h1>Flights index page</h1>
 
 <%= form_tag '/flights', method: :get do %>
-  <%= select_tag(:from_code, options_for_select(@fromAirports)) %>
-  <%= select_tag(:to_code, options_for_select(@toAirports)) %>
+  <%= select_tag(:from_code, options_for_select(@fromAirports, @selectedFromAirport)) %>
+  <%= select_tag(:to_code, options_for_select(@toAirports, @selectedToAirport)) %>
   <%= select_tag(:date, options_for_select(@flightDates)) %>
   <%= select_tag(:num_tickets, options_for_select([1, 2, 3, 4])) %>
   <%= submit_tag("Search Flights")%>
@@ -10,10 +10,17 @@
 
 <% if @results.nil? == false && @results.empty? == false %>
   <%= form_tag '/flights' do %>
-    <% @results.each do |r| %>
-      <%= radio_button_tag 'flight', r.id %>
-      <%= r.date %>
-      <%= r.duration %>
-    <% end %>
+    <table border='1'>
+      <% @results.each do |r| %>
+        <tr>      
+          <td><%= radio_button_tag 'flight', r.id %></td>      
+          <td><%= r.date %></td>
+          <td><%= r.from_airport.name %></td>
+          <td><%= r.to_airport.name %></td>
+          <td><%= r.name %></td>
+          <td><%= r.duration.to_s + " hours"%></td>
+        </tr>
+      <% end %>
+    </table>
   <% end %>
 <% end %>

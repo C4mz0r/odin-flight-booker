@@ -18,7 +18,7 @@ class Flight < ActiveRecord::Base
   end
   
   def Flight.formatFlightDates(dates)
-    dates.map! { |dt| dt.strftime("%m/%d/%Y %H:%M:%S") }   
+    dates.map! { |dt| dt.strftime("%m/%d/%Y %H:%M:%S") }.uniq  
   end
   
   

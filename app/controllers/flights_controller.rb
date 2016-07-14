@@ -6,7 +6,12 @@ class FlightsController < ApplicationController
     @toAirports = Airport.getDestinationAirports 
     @flightDates = Flight.formatFlightDates(Flight.getFlightDates)
      
-    @results = Flight.searchForFlights(params[:from_code], params[:to_code], params[:date])
+    # Used in results below, but also in the view to keep these
+    # options selected after page refresh
+    @selectedFromAirport = params[:from_code]
+    @selectedToAirport = params[:to_code]
+    
+    @results = Flight.searchForFlights(@selectedFromAirport, @selectedToAirport, params[:date])
     
       
   end
