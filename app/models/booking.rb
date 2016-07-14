@@ -1,4 +1,4 @@
 class Booking < ActiveRecord::Base
-  belongs_to :Flight
-  belongs_to :Passenger
+  belongs_to :flight
+  belongs_to :passenger  
 end

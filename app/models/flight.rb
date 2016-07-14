@@ -3,8 +3,8 @@ class Flight < ActiveRecord::Base
   belongs_to :to_airport, :class_name => 'Airport', :foreign_key => 'destination_id'
   
   has_many :bookings
-  
-    
+  has_many :passengers, through: :bookings
+      
   def self.getFlightDates
     Flight.all.pluck(:date)
   end
