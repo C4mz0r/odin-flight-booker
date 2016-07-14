@@ -22,7 +22,7 @@
         </tr>
       <% end %>
     </table>
-    <%= hidden_field(:passengers, :passengers, :value => "3") %>
+    <%= hidden_field_tag(:passengers, @passengers) %>    
     <%= submit_tag("Select Flight")%>
   <% end %>
 <% end %>
