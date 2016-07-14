@@ -20,4 +20,9 @@ Flight.create(name: 'American Airlines 987', source_id: 2, destination_id: 1, da
 Flight.create(name: 'Delta 227', source_id: 3, destination_id: 1, date: DateTime.now, duration: 2.75)
 Flight.create(name: 'Southwest 484', source_id: 3, destination_id: 2, date: DateTime.now, duration: 3.5)
 
+Passenger.create(name: "Sally", email: "sally@example.com")
+Passenger.create(name: "Fred", email: "Fred@example.com")
+
+Booking.create(Flight_id: 1, Passenger_id: 1)
+Booking.create(Flight_id: 1, Passenger_id: 2)
 
