@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   get 'bookings/new'
+  get 'bookings/create'
 
   root 'flights#index'
   get 'flights' => 'flights#index'
