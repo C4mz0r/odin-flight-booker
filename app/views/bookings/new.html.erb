@@ -1,17 +1,18 @@
 <h1>Bookings#new</h1>
 
-<%= form_tag bookings_create_path, method: :get do %>
+<%= form_for @booking do |f| %>
   <%= @flight.from_airport.name %>
   <%= @flight.to_airport.name %>
   <%= @flight.date %>
   <%= @flight.duration %>
   
-  <% @num_passengers.times do %>
-    <%= fields_for :passengers do |passenger_fields| %>
-      <%= passenger_fields.text_field :name %>
-      <%= passenger_fields.text_field :email %>
+  
+    <%= f.fields_for :passengers do |passenger| %> 
+      <%= passenger.hidden_field :id %>    
+      <%= passenger.text_field :name %>
+      <%= passenger.text_field :email %>
     <% end %>
-  <% end %>
+  
   
   <%= submit_tag("Book Flight")%>
 <% end %>
