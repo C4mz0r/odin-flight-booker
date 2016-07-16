@@ -1,9 +1,12 @@
-<h1>Find a Flight Today</h1>
+<% provide(:title, "Find a Flight Today")%>
+
+<div class="spacer"></div>
+
 <div class="search white-and-bordered">
   <%= render 'flight_search' %>
 </div>
-<div class="spacer">
-</div>
+
+<div class="spacer"></div>
 
 <%= render 'flight_search_results' %>
 
