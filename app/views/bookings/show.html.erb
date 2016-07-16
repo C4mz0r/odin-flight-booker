@@ -1,13 +1,15 @@
 <h1>Booking Confirmation</h1>
 
-<p>
+<div class="white-and-bordered">
+  <p>
 	The flight has been booked for passengers:
-</p>
+  </p>
 
-<% @booking.passengers.each do |p| %>
-  <li>
-    <%= p.name %>
-    <%= p.email %>
-  </li>
-<% end %>
-
+  <% @booking.passengers.each do |p| %>
+    <li>
+      <%= p.name %>
+      <%= p.email %>
+    </li>
+  <% end %>
+ 
+</div>

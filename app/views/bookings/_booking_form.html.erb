@@ -1,18 +1,24 @@
 <%= form_for @booking do |f| %>
-  <%= @flight.from_airport.name %>
-  <%= @flight.to_airport.name %>
-  <%= @flight.date %>
-  <%= @flight.duration %>
+  <h2 class="white-and-bordered">
+  	<%= @flight.name + " - " + @flight.from_airport.name + " to " + @flight.to_airport.name + " on " %>  
+  	<%= @flight.date.strftime("%B %e, %Y at %T") %>
+  </h2>
   <%= f.hidden_field :flight_id %>
-    
+  
+  <% passengerNumber = 1 %>  
   <%= f.fields_for :passengers do |passenger_form| %>
-	<li>
-	<%= passenger_form.label :name %>
-	<%= passenger_form.text_field :name %>
-	<%= passenger_form.label :email %>
-	<%= passenger_form.text_field :email %>
-	</li>	
+		
+    <h3><%= "Data for Passenger #{passengerNumber}"%></h3>   		
+    <div class="white-and-bordered">         			
+	  <%= passenger_form.label :name %>
+	  <%= passenger_form.text_field :name %>
+	  <%= passenger_form.label :email %>
+	  <%= passenger_form.text_field :email %>
+	</div>
+	<% passengerNumber += 1 %>
+		
   <% end %>
-
-  <%= submit_tag("Book Flight")%>
+  <div class="text-center">
+    <%= submit_tag("Book Flight", class: "btn btn-primary")%>
+  </div>
 <% end %>
