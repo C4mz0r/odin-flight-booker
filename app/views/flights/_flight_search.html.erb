@@ -10,7 +10,7 @@
     </tr>
     <tr>
       <td><%= label_tag 'Date'%></td>
-      <td><%= select_tag(:date, options_for_select(@flightDates, @selectedFlightDate)) %></td>
+      <td><%= select_tag(:date, options_for_select(Flight.formatFlightDates(@flightDates), @selectedFlightDate)) %></td>
     </tr>
     <tr>
       <td><%= label_tag 'Passengers'%></td>

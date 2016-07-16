@@ -11,7 +11,7 @@ class Flight < ActiveRecord::Base
   
   def Flight.searchForFlights(from_code, to_code, date)
     return [] if (date.nil?)    
-    date = DateTime.strptime(date, "%m/%d/%Y %H:%M:%S")
+    date = DateTime.strptime(date, "%B %d, %Y")
     Flight.all.select do |flight|
       flight.from_airport.name == from_code &&
       flight.to_airport.name == to_code &&
@@ -20,8 +20,9 @@ class Flight < ActiveRecord::Base
     end   
   end
   
-  def Flight.formatFlightDates(dates)
-    dates.map! { |dt| dt.strftime("%m/%d/%Y %H:%M:%S") }.uniq  
+  # Converts date strings into format like July 1, 2016  
+  def Flight.formatFlightDates(dates)    
+    dates.map! { |dateString| DateTime.parse(dateString.to_s).to_date.strftime("%B %d, %Y")}.uniq    
   end
   
   
