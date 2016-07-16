@@ -1,6 +1,8 @@
 class BookingsController < ApplicationController
-  def new
-    byebug
+  def new    
+    if (params[:flight].nil?) 
+      redirect_to root_path and return
+    end     
     @flight = Flight.find(params[:flight])
     @num_passengers = params[:passengers].to_i    
     @booking = @flight.bookings.build
