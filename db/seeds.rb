@@ -23,6 +23,6 @@ Flight.create(name: 'Southwest 484', source_id: 3, destination_id: 2, date: Date
 Passenger.create(name: "Sally", email: "sally@example.com")
 Passenger.create(name: "Fred", email: "Fred@example.com")
 
-Booking.create(flight_id: 1, passenger_id: 1)
-Booking.create(flight_id: 1, passenger_id: 2)
+Booking.create(flight_id: 1)#, passenger_id: 1)
+Booking.create(flight_id: 1)#, passenger_id: 2)
 
