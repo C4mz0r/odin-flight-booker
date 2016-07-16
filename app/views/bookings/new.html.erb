@@ -5,17 +5,17 @@
   <%= @flight.to_airport.name %>
   <%= @flight.date %>
   <%= @flight.duration %>
+  <%= f.hidden_field :flight_id %>
+    
+  <%= f.fields_for :passengers do |passenger_form| %>
+	<li>
+	<%= passenger_form.label :name %>
+	<%= passenger_form.text_field :name %>
+	<%= passenger_form.label :email %>
+	<%= passenger_form.text_field :email %>
+	</li>	
+  <% end %>
 
-  <%= f.hidden_field :flight_id %>  
-	<%= f.fields_for :passengers do |passenger_form| %>
-	  <li>
-	  <%= passenger_form.label :name %>
-	  <%= passenger_form.text_field :name %>
-	  <%= passenger_form.label :email %>
-	  <%= passenger_form.text_field :email %>
-	  </li>	
-	<% end %>
-
-<%= submit_tag("Book Flight")%>
+  <%= submit_tag("Book Flight")%>
 <% end %>
 
