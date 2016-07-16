@@ -1,7 +1,23 @@
-<%= form_tag '/flights', method: :get do %>
-  <%= select_tag(:from_code, options_for_select(@fromAirports, @selectedFromAirport)) %>
-  <%= select_tag(:to_code, options_for_select(@toAirports, @selectedToAirport)) %>
-  <%= select_tag(:date, options_for_select(@flightDates)) %>
-  <%= select_tag(:num_tickets, options_for_select([1, 2, 3, 4])) %>
-  <%= submit_tag("Search Flights")%>
+<%= form_tag '/flights', method: :get do %>    	
+  <table>
+  	<tr>
+      <td><%= label_tag 'From'%></td>
+      <td><%= select_tag(:from_code, options_for_select(@fromAirports, @selectedFromAirport)) %></td>        
+    </tr>
+    <tr>
+      <td><%= label_tag 'To'%></td>
+      <td><%= select_tag(:to_code, options_for_select(@toAirports, @selectedToAirport)) %></td>
+    </tr>
+    <tr>
+      <td><%= label_tag 'Date'%></td>
+      <td><%= select_tag(:date, options_for_select(@flightDates)) %></td>
+    </tr>
+    <tr>
+      <td><%= label_tag 'Passengers'%></td>
+      <td><%= select_tag(:num_tickets, options_for_select([1, 2, 3, 4])) %></td>
+    </tr>
+  </table>
+  <div class="text-center">
+    <%= submit_tag("Search Flights", class: "btn btn-primary")%>
+  </div>
 <% end %>
