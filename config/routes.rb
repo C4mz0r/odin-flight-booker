@@ -1,15 +1,11 @@
 Rails.application.routes.draw do
   
-  
-  
-  get 'bookings/new'
-  #get 'bookings/create'
-  #get 'bookings/:id' => 'bookings#show'
-  resources :bookings
-
   root 'flights#index'
   get 'flights' => 'flights#index'
-  
+      
+  get 'bookings/new' 
+  resources :bookings
+    
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
