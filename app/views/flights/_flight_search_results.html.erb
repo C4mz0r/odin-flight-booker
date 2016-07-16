@@ -1,4 +1,5 @@
 <% if @results.nil? == false && @results.empty? == false %>
+  <div class='results white-and-bordered'>
   <%= form_tag bookings_new_path, method: :get do %>
     <table class="table table-striped">
       <th>    		
@@ -8,9 +9,9 @@
     	<td>Flight Name</td>
     	<td>Duration</td>
       </th>
-      <% @results.each do |r| %>
+      <% @results.each_with_index do |r, i| %>
         <tr>      
-          <td><%= radio_button_tag 'flight', r.id %></td>      
+          <td><%= radio_button_tag 'flight', r.id, selectIfTopButton(i) %></td>      
           <td><%= r.date %></td>
           <td><%= r.from_airport.name %></td>
           <td><%= r.to_airport.name %></td>
@@ -24,4 +25,5 @@
       <%= submit_tag("Select Flight", class: "btn btn-primary")%>
     </div>
   <% end %>
+  </div>
 <% end %>
