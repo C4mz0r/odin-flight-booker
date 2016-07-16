@@ -1,21 +1,2 @@
 <h1>Bookings#new</h1>
-
-<%= form_for @booking do |f| %>
-  <%= @flight.from_airport.name %>
-  <%= @flight.to_airport.name %>
-  <%= @flight.date %>
-  <%= @flight.duration %>
-  <%= f.hidden_field :flight_id %>
-    
-  <%= f.fields_for :passengers do |passenger_form| %>
-	<li>
-	<%= passenger_form.label :name %>
-	<%= passenger_form.text_field :name %>
-	<%= passenger_form.label :email %>
-	<%= passenger_form.text_field :email %>
-	</li>	
-  <% end %>
-
-  <%= submit_tag("Book Flight")%>
-<% end %>
-
+<%= render 'booking_form'%>
