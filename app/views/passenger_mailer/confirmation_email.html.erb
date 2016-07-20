@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= @passenger.name %>, your flight has been booked for <%= @flight.date %></h1>
+            
+    <p>View your booking details <%= link_to 'online', @booking_url %></p>
+    
+    <p>Thank you for using the Odin Flight Booker!</p>
+  </body>
+</html>
